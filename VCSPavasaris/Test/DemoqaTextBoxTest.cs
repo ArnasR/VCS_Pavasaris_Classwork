@@ -41,6 +41,5 @@ namespace VCSPavasaris.Test
 
             demoqaTextBoxPage.VerifyFullNameResult(fullName);
         }
-
     }
 }
