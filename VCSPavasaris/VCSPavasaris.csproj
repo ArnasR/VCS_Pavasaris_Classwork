@@ -57,6 +57,7 @@
     <Compile Include="DemoqaTextBoxTest.cs" />
     <Compile Include="FirstTests.cs" />
     <Compile Include="ND1.cs" />
+    <Compile Include="Page\DemoqaTextBoxPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestWebDriver.cs" />
     <Compile Include="Uzduotis1.cs" />
