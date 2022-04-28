@@ -24,35 +24,32 @@ namespace VCSPavasaris.Page
             _driver = webDriver;
         }
 
-        public static void NavigateToDefaultPage()
+        public void NavigateToDefaultPage()
         {
             _driver.Url = "https://demoqa.com/text-box";
         }
 
-        public static void ClosePopUp()
+        public void ClosePopUp()
         {
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
             wait.Until(d => _popup.Displayed);
             _popup.Click();
         }
 
-        public static void InsertTextToFullNameField(string fullName)
+        public void InsertTextToFullNameField(string fullName)
         {
             _fullNameInput.Clear();
             _fullNameInput.SendKeys(fullName);
         }
 
-        public static void ClickSubmitButton()
+        public void ClickSubmitButton()
         {
             _submitButton.Click();
         }
 
-        public static void VerifyFullNameResult(string expectedResult)
+        public void VerifyFullNameResult(string expectedResult)
         {
             Assert.AreEqual($"Name:{expectedResult}", _nameResult.Text, "Name is wrong!");
         }
-
-
-
     }
 }
