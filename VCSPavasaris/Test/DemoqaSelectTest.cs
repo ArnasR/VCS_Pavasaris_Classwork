@@ -17,5 +17,13 @@ namespace VCSPavasaris.Test
             _demoqaSelectPage.SelectFromDropDownByValue("6");
             _demoqaSelectPage.VerifySingleSelectResult("White");
         }
+
+        [Test]
+        public static void TestSelectByText()
+        {
+            _demoqaSelectPage.NavigateToDefaultPage();
+            _demoqaSelectPage.SelectFromDropDownByText("Black");
+            _demoqaSelectPage.VerifySingleSelectResult("Black");
+        }
     }
 }
