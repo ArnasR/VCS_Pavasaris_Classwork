@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
 namespace VCSPavasaris.Page
@@ -43,6 +44,37 @@ namespace VCSPavasaris.Page
         public void VerifySingleSelectResult(string expectedResult)
         {
             Assert.AreEqual(expectedResult, _dropDown.SelectedOption.Text, "Fail. Selected color is incorect.");
+        }
+
+        public void SelectMultiDropDown(List<string> elements)
+        {
+            Actions action = new Actions(Driver);
+
+            action.KeyDown(Keys.LeftControl);
+
+            foreach (IWebElement selectElement in _multiDropDown.Options)
+            {
+                foreach (string element in elements)
+                {
+                    if (element.Equals(selectElement.Text))
+                    {
+                        _multiDropDown.SelectByText(element);
+                    }
+                }
+            }
+
+            action.KeyUp(Keys.LeftControl);
+            action.Build().Perform();
+        }
+
+        public void VerifyMultiSelectDropDown(string expectedResult)
+        {
+            IList<IWebElement> options = _multiDropDown.AllSelectedOptions;
+
+            foreach (IWebElement option in options)
+            {
+                Assert.IsTrue(expectedResult.Contains(option.Text), "Selected wrong car");
+            }
         }
     }
 }
