@@ -52,16 +52,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrowserTests.cs" />
-    <Compile Include="CheckBoxTest.cs" />
-    <Compile Include="DemoqaTextBoxTest.cs" />
-    <Compile Include="FirstTests.cs" />
-    <Compile Include="ND1.cs" />
+    <Compile Include="Archive\BrowserTests.cs" />
+    <Compile Include="Archive\CheckBoxTest.cs" />
+    <Compile Include="Archive\DemoqaTextBoxTest.cs" />
+    <Compile Include="Archive\FirstTests.cs" />
+    <Compile Include="Archive\ND1.cs" />
+    <Compile Include="Page\BasePage.cs" />
     <Compile Include="Page\DemoqaTextBoxPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestWebDriver.cs" />
+    <Compile Include="Archive\TestWebDriver.cs" />
     <Compile Include="Test\DemoqaTextBoxTest.cs" />
-    <Compile Include="Uzduotis1.cs" />
+    <Compile Include="Archive\Uzduotis1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
