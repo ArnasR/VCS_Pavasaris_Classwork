@@ -10,29 +10,25 @@ using System.Threading.Tasks;
 
 namespace VCSPavasaris.Page
 {
-    class DemoqaTextBoxPage
+    class DemoqaTextBoxPage : BasePage
     {
-        private static IWebDriver _driver;
+        private const string PageAddress = "https://demoqa.com/text-box";
 
-        private static IWebElement _fullNameInput => _driver.FindElement(By.Id("userName"));
-        private static IWebElement _submitButton => _driver.FindElement(By.CssSelector("#submit"));
-        private static IWebElement _nameResult => _driver.FindElement(By.Id("name"));
-        private static IWebElement _popup => _driver.FindElement(By.Id("close-fixedban"));
+        private static IWebElement _fullNameInput => Driver.FindElement(By.Id("userName"));
+        private static IWebElement _submitButton => Driver.FindElement(By.CssSelector("#submit"));
+        private static IWebElement _nameResult => Driver.FindElement(By.Id("name"));
+        private static IWebElement _popup => Driver.FindElement(By.Id("close-fixedban"));
 
-        public DemoqaTextBoxPage(IWebDriver webDriver)
-        {
-            _driver = webDriver;
-        }
+        public DemoqaTextBoxPage(IWebDriver webDriver) : base(webDriver) { }
 
         public void NavigateToDefaultPage()
         {
-            _driver.Url = "https://demoqa.com/text-box";
+            Driver.Url = PageAddress;
         }
 
         public void ClosePopUp()
         {
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-            wait.Until(d => _popup.Displayed);
+            GetWait(10).Until(d => _popup.Displayed);
             _popup.Click();
         }
 
