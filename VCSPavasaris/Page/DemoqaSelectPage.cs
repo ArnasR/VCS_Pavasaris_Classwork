@@ -28,5 +28,15 @@ namespace VCSPavasaris.Page
             GetWait(10).Until(d => _popup.Displayed);
             _popup.Click();
         }
+
+        public void SelectFromDropDownByText(string text)
+        {
+            _dropDown.SelectByText(text);
+        }
+
+        public void SelectFromDropDownByValue(string value)
+        {
+            _dropDown.SelectByValue(value);
+        }
     }
 }
