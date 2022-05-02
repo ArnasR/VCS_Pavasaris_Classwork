@@ -16,6 +16,7 @@ namespace VCSPavasaris.Test
 
         public static DemoqaTextBoxPage _demoqaTextBoxPage;
         public static DemoqaCheckBoxPage _demoqaCheckBoxPage;
+        public static DemoqaSelectPage _demoqaSelectPage;
 
 
         [OneTimeSetUp]
@@ -27,12 +28,13 @@ namespace VCSPavasaris.Test
 
             _demoqaTextBoxPage = new DemoqaTextBoxPage(Driver);
             _demoqaCheckBoxPage = new DemoqaCheckBoxPage(Driver);
+            _demoqaSelectPage = new DemoqaSelectPage(Driver);
         }
 
         [OneTimeTearDown]
         public static void OneTimeTearDown()
         {
-           Driver.Quit();
+          Driver.Quit();
         }
 
     }

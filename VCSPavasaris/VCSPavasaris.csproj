@@ -69,6 +69,7 @@
     <Compile Include="Archive\TestWebDriver.cs" />
     <Compile Include="Test\BaseTest.cs" />
     <Compile Include="Test\DemoqaCheckBoxTest.cs" />
+    <Compile Include="Test\DemoqaSelectTest.cs" />
     <Compile Include="Test\DemoqaTextBoxTest.cs" />
     <Compile Include="Archive\Uzduotis1.cs" />
     <Compile Include="Test\TestNDTest.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -37,6 +38,11 @@ namespace VCSPavasaris.Page
         public void SelectFromDropDownByValue(string value)
         {
             _dropDown.SelectByValue(value);
+        }
+
+        public void VerifySingleSelectResult(string expectedResult)
+        {
+            Assert.AreEqual(expectedResult, _dropDown.SelectedOption.Text, "Fail. Selected color is incorect.");
         }
     }
 }
