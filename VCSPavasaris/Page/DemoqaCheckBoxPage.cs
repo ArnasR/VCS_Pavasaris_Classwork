@@ -16,6 +16,8 @@ namespace VCSPavasaris.Page
 
         private static IWebElement _popup => Driver.FindElement(By.Id("close-fixedban"));
 
+        private IReadOnlyCollection<IWebElement> _checkBoxes = Driver.FindElements(By.ClassName("rct-checkbox"));
+
         public DemoqaCheckBoxPage(IWebDriver webDriver) : base(webDriver) { }
 
         public void NavigateToDefaultPage()
