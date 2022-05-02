@@ -58,6 +58,7 @@
     <Compile Include="Archive\FirstTests.cs" />
     <Compile Include="Archive\ND1.cs" />
     <Compile Include="Page\BasePage.cs" />
+    <Compile Include="Page\DemoqaCheckBoxPage.cs" />
     <Compile Include="Page\DemoqaTextBoxPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Archive\TestWebDriver.cs" />
