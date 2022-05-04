@@ -16,11 +16,14 @@ namespace VCSPavasaris.Test
             _demoqaCheckBoxPage.ClickExpandAllButton();
         }
 
-        [Test]
-        public static void FailingTest()
+        [TestCase("Desktop", "Downloads", "\r\ndesktop\r\nnotes\r\ncommands\r\ndownloads\r\nwordFile\r\nexcelFile", TestName = "Desktop, Downloads")]
+        [TestCase("Notes", "General", "\r\nnotes\r\ngeneral", TestName = "Notes, General")]
+        public static void TestCheckBox2(string firstChoice, string secondChoice, string result)
         {
             _demoqaCheckBoxPage.NavigateToDefaultPage();
-            Assert.IsTrue(false);
+            _demoqaCheckBoxPage.ClickExpandAllButton();
+            _demoqaCheckBoxPage.ClickOnTwoCheckBoxes(firstChoice, secondChoice);
+            _demoqaCheckBoxPage.VerifyResults(result);
         }
     }
 }

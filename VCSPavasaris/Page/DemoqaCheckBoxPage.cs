@@ -16,7 +16,9 @@ namespace VCSPavasaris.Page
 
         private static IWebElement _popup => Driver.FindElement(By.Id("close-fixedban"));
 
-        private IReadOnlyCollection<IWebElement> _checkBoxes = Driver.FindElements(By.ClassName("rct-checkbox"));
+        private IReadOnlyCollection<IWebElement> _checkBoxes => Driver.FindElements(By.ClassName("rct-text"));
+
+        private IWebElement _actualResult => Driver.FindElement(By.Id("result"));
 
         public DemoqaCheckBoxPage(IWebDriver webDriver) : base(webDriver) { }
 
@@ -34,6 +36,30 @@ namespace VCSPavasaris.Page
         public void ClickExpandAllButton()
         {
             _expandAllButton.Click();
+        }
+
+        public void ClickOnTwoCheckBoxes(string firstChoice, string secondChoice)
+        {
+            foreach (IWebElement checkBox in _checkBoxes)
+            {
+                IWebElement checkBoxElement = checkBox.FindElement(By.ClassName("rct-checkbox"));
+
+                if (checkBox.Text.Equals(firstChoice))
+                {
+                    checkBoxElement.Click();
+                }
+                if (checkBox.Text.Equals(secondChoice))
+                {
+                    checkBoxElement.Click();
+                }
+            }
+        }
+
+        public void VerifyResults(string expectedResult)
+        {
+            string testResult = _actualResult.Text;
+
+            Assert.IsTrue(_actualResult.Text.Contains(expectedResult), "Result is Incorrect");
         }
 
     }
