@@ -19,6 +19,7 @@ namespace VCSPavasaris.Test
         [Test]
         public static void FailingTest()
         {
+            _demoqaCheckBoxPage.NavigateToDefaultPage();
             Assert.IsTrue(false);
         }
     }
