@@ -19,6 +19,8 @@ namespace VCSPavasaris.Tools
             Screenshot screenshot = webDriver.TakeScreenshot();
 
             string screenshotDirectory = Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            string screenshotFolder = Path.Combine(screenshotDirectory, "screenshot");
+            Directory.CreateDirectory(screenshotFolder);
 
 
         }
