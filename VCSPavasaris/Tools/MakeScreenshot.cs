@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 
 namespace VCSPavasaris.Tools
 {
@@ -14,7 +15,11 @@ namespace VCSPavasaris.Tools
         public static void TakeScreenshot(IWebDriver webDriver)
         {
             Console.WriteLine(Assembly.GetExecutingAssembly().Location);
-            string a = Assembly.GetExecutingAssembly().Location.ToString();
+
+            Screenshot screenshot = webDriver.TakeScreenshot();
+
+            string screenshotDirectory = Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+
 
         }
 
