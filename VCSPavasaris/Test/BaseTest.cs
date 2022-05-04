@@ -13,6 +13,8 @@ namespace VCSPavasaris.Test
 {
     class BaseTest
     {
+        //Kill all chrome instances using CMD: taskkill /F /IM chromedriver.exe /T
+
         protected static IWebDriver Driver;
 
         public static DemoqaTextBoxPage _demoqaTextBoxPage;

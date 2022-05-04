@@ -60,6 +60,8 @@
     <Compile Include="Archive\DemoqaTextBoxTest.cs" />
     <Compile Include="Archive\FirstTests.cs" />
     <Compile Include="Archive\ND1.cs" />
+    <Compile Include="Drivers\Browsers.cs" />
+    <Compile Include="Drivers\CustomDriver.cs" />
     <Compile Include="Page\BasePage.cs" />
     <Compile Include="Page\DemoqaCheckBoxPage.cs" />
     <Compile Include="Page\DemoqaSelectPage.cs" />
