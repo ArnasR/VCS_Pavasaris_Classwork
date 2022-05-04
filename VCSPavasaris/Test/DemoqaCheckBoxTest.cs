@@ -15,5 +15,11 @@ namespace VCSPavasaris.Test
             _demoqaCheckBoxPage.ClosePopUp();
             _demoqaCheckBoxPage.ClickExpandAllButton();
         }
+
+        [Test]
+        public static void FailingTest()
+        {
+            Assert.IsTrue(false);
+        }
     }
 }

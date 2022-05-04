@@ -75,6 +75,7 @@
     <Compile Include="Test\DemoqaTextBoxTest.cs" />
     <Compile Include="Archive\Uzduotis1.cs" />
     <Compile Include="Test\TestNDTest.cs" />
+    <Compile Include="Tools\MakeScreenshot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

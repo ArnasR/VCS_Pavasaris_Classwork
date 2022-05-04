@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VCSPavasaris.Drivers;
 using VCSPavasaris.Page;
+using VCSPavasaris.Tools;
 
 namespace VCSPavasaris.Test
 {
@@ -36,6 +38,15 @@ namespace VCSPavasaris.Test
         public static void OneTimeTearDown()
         {
           Driver.Quit();
+        }
+
+        [TearDown]
+        public static void TearDown()
+        {
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            {
+                MakeScreenshot.TakeScreenshot(Driver);
+            }
         }
 
     }
