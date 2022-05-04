@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VCSPavasaris.Drivers;
 using VCSPavasaris.Page;
 
 namespace VCSPavasaris.Test
@@ -22,9 +23,7 @@ namespace VCSPavasaris.Test
         [OneTimeSetUp]
         public static void OneTimeSetUp()
         {
-            Driver = new ChromeDriver();
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            Driver.Manage().Window.Maximize();
+            Driver = CustomDriver.GetChromeDriver();
 
             _demoqaTextBoxPage = new DemoqaTextBoxPage(Driver);
             _demoqaCheckBoxPage = new DemoqaCheckBoxPage(Driver);
@@ -34,7 +33,7 @@ namespace VCSPavasaris.Test
         [OneTimeTearDown]
         public static void OneTimeTearDown()
         {
-         // Driver.Quit();
+          Driver.Quit();
         }
 
     }
