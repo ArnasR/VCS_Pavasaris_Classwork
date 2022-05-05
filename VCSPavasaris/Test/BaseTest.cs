@@ -23,6 +23,7 @@ namespace VCSPavasaris.Test
         public static DemoqaCheckBoxPage _demoqaCheckBoxPage;
         public static DemoqaSelectPage _demoqaSelectPage;
         public static SenukaiPage _senukaiPage;
+        public static AlertPage _alertPage;
 
 
         [OneTimeSetUp]
@@ -34,6 +35,7 @@ namespace VCSPavasaris.Test
             _demoqaCheckBoxPage = new DemoqaCheckBoxPage(Driver);
             _demoqaSelectPage = new DemoqaSelectPage(Driver);
             _senukaiPage = new SenukaiPage(Driver);
+            _alertPage = new AlertPage(Driver);
         }
 
         [OneTimeTearDown]
