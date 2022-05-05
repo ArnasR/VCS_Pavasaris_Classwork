@@ -17,12 +17,28 @@ namespace VCSPavasaris.Page
         private SelectElement _city => new SelectElement(Driver.FindElement(By.Id("city")));
         private IWebElement _calculateButton => Driver.FindElement(By.Id("calculate"));
         private IWebElement _resultTextElement => Driver.FindElement(By.CssSelector("#mortgageCalculatorStep2 > div.row > div > div:nth-child(5) > div > strong"));
+        private IWebElement _popup => Driver.FindElement(By.CssSelector("#cookiesMessage > div > div > div > div.d-flex.flex-column.flex-sm-row.mx-n1.mt-4 > div:nth-child(1) > a"));
 
         public SebCalcPage(IWebDriver webDriver) : base(webDriver) { }
 
         public SebCalcPage NavigateToDefaultPage()
         {
             Driver.Url = PageAddress;
+
+            return this;
+        }
+
+        public SebCalcPage ClosePopup()
+        {
+            GetWait(10).Until(d => _popup.Displayed);
+            _popup.Click();
+
+            return this;
+        }
+
+        public SebCalcPage SwitchToFrame()
+        {
+            Driver.SwitchTo().Frame(0);
 
             return this;
         }

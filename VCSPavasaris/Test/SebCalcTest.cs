@@ -13,6 +13,8 @@ namespace VCSPavasaris.Test
         public static void TestLoanCalculator()
         {
             _sebCalcPage.NavigateToDefaultPage()
+                .ClosePopup()
+                .SwitchToFrame()
                 .InsertIncome("1000")
                 .SelectFromCityDropDownByValue("Klaipeda")
                 .ClickCalculateButton()

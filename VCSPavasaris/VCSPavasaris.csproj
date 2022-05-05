@@ -67,6 +67,7 @@
     <Compile Include="Page\DemoqaCheckBoxPage.cs" />
     <Compile Include="Page\DemoqaSelectPage.cs" />
     <Compile Include="Page\DemoqaTextBoxPage.cs" />
+    <Compile Include="Page\SebCalcPage.cs" />
     <Compile Include="Page\SenukaiPage.cs" />
     <Compile Include="Page\testNDPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Test\DemoqaSelectTest.cs" />
     <Compile Include="Test\DemoqaTextBoxTest.cs" />
     <Compile Include="Archive\Uzduotis1.cs" />
+    <Compile Include="Test\SebCalcTest.cs" />
     <Compile Include="Test\SenukaiTest.cs" />
     <Compile Include="Test\TestNDTest.cs" />
     <Compile Include="Tools\MakeScreenshot.cs" />

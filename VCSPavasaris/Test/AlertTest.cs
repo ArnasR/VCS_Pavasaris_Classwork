@@ -24,8 +24,6 @@ namespace VCSPavasaris.Test
                 .ClickSecondAlertButton()
                 .CancelSecondAlertButton()
                 .VerifySecondAlertText("Cancel");
-            _demoqaSelectPage
-                .NavigateToDefaultPage();
         }
     }
 }

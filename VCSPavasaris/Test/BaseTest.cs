@@ -24,6 +24,7 @@ namespace VCSPavasaris.Test
         public static DemoqaSelectPage _demoqaSelectPage;
         public static SenukaiPage _senukaiPage;
         public static AlertPage _alertPage;
+        public static SebCalcPage _sebCalcPage;
 
 
         [OneTimeSetUp]
@@ -36,6 +37,7 @@ namespace VCSPavasaris.Test
             _demoqaSelectPage = new DemoqaSelectPage(Driver);
             _senukaiPage = new SenukaiPage(Driver);
             _alertPage = new AlertPage(Driver);
+            _sebCalcPage = new SebCalcPage(Driver);
         }
 
         [OneTimeTearDown]
