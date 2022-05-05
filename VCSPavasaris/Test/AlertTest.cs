@@ -12,18 +12,20 @@ namespace VCSPavasaris.Test
         [Test]
         public static void TestFirstAlert()
         {
-            _alertPage.NavigateToDefaultPage();
-            _alertPage.ClickFirstAlertButton();
-            _alertPage.AcceptFirstAlert();
+            _alertPage.NavigateToDefaultPage()
+                .ClickFirstAlertButton()
+                .AcceptFirstAlert();
         }
 
         [Test]
         public static void TestSecondAlert()
         {
-            _alertPage.NavigateToDefaultPage();
-            _alertPage.ClickSecondAlertButton();
-            _alertPage.CancelSecondAlertButton();
-            _alertPage.VerifySecondAlertText("Cancel");
+            _alertPage.NavigateToDefaultPage()
+                .ClickSecondAlertButton()
+                .CancelSecondAlertButton()
+                .VerifySecondAlertText("Cancel");
+            _demoqaSelectPage
+                .NavigateToDefaultPage();
         }
     }
 }
