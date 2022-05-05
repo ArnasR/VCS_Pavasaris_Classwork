@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,13 @@ namespace VCSPavasaris.Page
         public SebCalcPage ClickCalculateButton()
         {
             _calculateButton.Click();
+
+            return this;
+        }
+
+        public SebCalcPage CheckIfICanGetLoan(string loan)
+        {
+            Assert.AreEqual(loan, _resultTextElement.Text, "I can't get loan");
 
             return this;
         }
