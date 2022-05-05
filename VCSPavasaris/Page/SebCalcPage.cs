@@ -25,5 +25,29 @@ namespace VCSPavasaris.Page
 
             return this;
         }
+
+        public SebCalcPage InsertIncome(string income)
+        {
+            _incomeInput.Clear();
+            _incomeInput.SendKeys(income);
+
+            return this;
+        }
+
+        public SebCalcPage SelectFromCityDropDownByValue(string value)
+        {
+            _city.SelectByValue(value);
+
+            return this;
+        }
+
+        public SebCalcPage ClickCalculateButton()
+        {
+            _calculateButton.Click();
+
+            return this;
+        }
+
+
     }
 }
