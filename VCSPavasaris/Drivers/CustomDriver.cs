@@ -21,6 +21,11 @@ namespace VCSPavasaris.Drivers
             return GetDriver(Browsers.Firefox);
         }
 
+        public static IWebDriver GetIncognitoChrome()
+        {
+            return GetDriver(Browsers.IncognitoChrome);
+        }
+
         private static IWebDriver GetDriver(Browsers browser)
         {
             IWebDriver webDriver = null;
@@ -33,6 +38,9 @@ namespace VCSPavasaris.Drivers
                 case Browsers.Firefox:
                     webDriver = new FirefoxDriver();
                     break;
+                case Browsers.IncognitoChrome:
+                    webDriver = GetChromeWithIncognitoOption();
+                    break;
                 default:
                     webDriver = new ChromeDriver();
                     break;
@@ -42,6 +50,16 @@ namespace VCSPavasaris.Drivers
             webDriver.Manage().Window.Maximize();
 
             return webDriver;
+        }
+
+        private static IWebDriver GetChromeWithIncognitoOption()
+        {
+            ChromeOptions options = new ChromeOptions();
+
+           // options.AddArgument("incognito");
+            options.AddArguments("headless", "incognito");
+
+            return new ChromeDriver(options);
         }
 
     }
