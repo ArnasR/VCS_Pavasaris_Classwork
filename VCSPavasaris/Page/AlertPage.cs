@@ -23,35 +23,47 @@ namespace VCSPavasaris.Page
 
         public AlertPage(IWebDriver webDriver) : base(webDriver) { }
 
-        public void NavigateToDefaultPage()
+        public AlertPage NavigateToDefaultPage()
         {
             Driver.Url = PageAddress;
+
+            return this;
         }
 
-        public void ClickFirstAlertButton()
+        public AlertPage ClickFirstAlertButton()
         {
             _firstAlertButton.Click();
+
+            return this;
         }
 
-        public void AcceptFirstAlert()
+        public AlertPage AcceptFirstAlert()
         {
             IAlert alert = Driver.SwitchTo().Alert();
             alert.Accept();
+
+            return this;
         }
 
-        public void ClickSecondAlertButton()
+        public AlertPage ClickSecondAlertButton()
         {
             _confirmButton.Click();
+
+            return this;
         }
 
-        public void CancelSecondAlertButton()
+        public AlertPage CancelSecondAlertButton()
         {
             Driver.SwitchTo().Alert().Dismiss();
+
+            return this;
         }
 
-        public void VerifySecondAlertText(string text)
+        public AlertPage VerifySecondAlertText(string text)
         {
             Assert.AreEqual($"{YouSelectedText} {text}", _confirmResult.Text, "Expected vs actual result is incorect");
+
+            return this;
         }
 
 
