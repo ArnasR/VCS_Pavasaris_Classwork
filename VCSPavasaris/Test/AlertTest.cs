@@ -14,6 +14,7 @@ namespace VCSPavasaris.Test
         {
             _alertPage.NavigateToDefaultPage();
             _alertPage.ClickFirstAlertButton();
+            _alertPage.AcceptFirstAlert();
         }
     }
 }

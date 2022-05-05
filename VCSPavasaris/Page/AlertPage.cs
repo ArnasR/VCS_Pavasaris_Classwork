@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,34 @@ namespace VCSPavasaris.Page
         {
             Driver.Url = PageAddress;
         }
+
+        public void ClickFirstAlertButton()
+        {
+            _firstAlertButton.Click();
+        }
+
+        public void AcceptFirstAlert()
+        {
+            IAlert alert = Driver.SwitchTo().Alert();
+            alert.Accept();
+        }
+
+        public void ClickSecondAlertButton()
+        {
+            _confirmButton.Click();
+        }
+
+        public void CancelSecondAlertButton()
+        {
+            Driver.SwitchTo().Alert().Dismiss();
+        }
+
+        public void VerifySecondAlertText(string text)
+        {
+            Assert.AreEqual($"{YouSelectedText} {text}", _confirmResult.Text, "Expected vs actual result is incorect");
+        }
+
+
 
     }
 }
